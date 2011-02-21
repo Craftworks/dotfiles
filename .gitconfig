@@ -1,0 +1,20 @@
+[core]
+    autocrlf = input
+    pager = LESS=-R less
+
+[color]
+    ui = true
+
+[alias]
+    st = status
+    di = diff
+    ad = add
+    ci = commit
+    co = checkout
+    br = branch
+    ba = branch -a
+    bm = branch --merged
+    bn = branch --no-merged
+    ls = log --stat
+    lp = log -p
+    la = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%cn] %Cgreen%d%Creset %s\" --all --date=short
