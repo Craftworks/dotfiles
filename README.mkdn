@@ -1,0 +1,16 @@
+Craftworks's dotfiles
+=====================
+
+Clone repositry
+---------------
+
+    mkdir ~/repos
+    cd ~/repos
+    git clone git://github.com/Craftworks/dotfiles.git
+
+Initialize dotfiles
+-------------------
+
+    cd ~/repos/dotfiles
+    ./setup/link.sh
+
