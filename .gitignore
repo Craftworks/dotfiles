@@ -1,5 +1,6 @@
 *.sw?
 blib/
+extlib/
 inc/
 Makefile
 Makefile.old

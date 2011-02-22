@@ -1,6 +1,8 @@
 [core]
     autocrlf = input
     pager = LESS=-R less
+    editor = vim
+    excludesfile = ~/.gitignore
 
 [color]
     ui = true
@@ -9,6 +11,7 @@
     st = status
     di = diff
     ad = add
+    rs = reset
     ci = commit
     co = checkout
     br = branch
