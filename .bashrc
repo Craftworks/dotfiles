@@ -33,10 +33,12 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
+if [ -d "$HOME/bin" ]; then
     PATH="$HOME/bin:$PATH"
 fi
 
-echo -ne "\033]0;$(whoami)@$(hostname)\007"
+if [ "$TERM" = "xterm" ]; then
+    echo -ne "\033]0;$(whoami)@$(hostname)\007"
+fi
 
 PS1='\[\033[0m\]\u@\h\[\033[00m\]:\[\033[1;30m\]\w\[\033[00m\]\[\033[33m\]$(__git_ps1)\[\033[00m\]\$ '
