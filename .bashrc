@@ -18,6 +18,8 @@ shopt -s checkwinsize
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
+elif [ -f ~/.git-completion.bash ]; then
+    . ~/.git-completion.bash
 fi
 
 # You may want to put all your additions into a separate file like
