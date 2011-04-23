@@ -18,6 +18,10 @@ shopt -s checkwinsize
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
+elif which -s brew; then
+    if [ -f `brew --prefix`/etc/bash_completion ]; then
+        . `brew --prefix`/etc/bash_completion
+    fi
 fi
 
 # You may want to put all your additions into a separate file like

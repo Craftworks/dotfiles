@@ -1,4 +1,8 @@
-alias ls='ls --color=auto'
+if [ "$OSTYPE" == "darwin10.0" ]; then
+    alias ls='ls -G'
+else
+    alias ls='ls --color=auto'
+fi
 alias l='ls -CF'
 alias ll='ls -alF'
 alias la='ls -A'
