@@ -1,3 +1,4 @@
+set modeline
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -35,6 +36,9 @@ autocmd FileType perl nnoremap <buffer> <Left> :<C-u>!prove -v -I./lib -I./t/lib
 autocmd FileType css    setlocal ts=2 sts=2 sw=2
 autocmd FileType xslate setlocal ts=2 sts=2 sw=2
 autocmd FileType xslate inoremap <buffer> << </<C-p>>
+
+highlight WhitespaceEOL ctermbg=red guibg=red
+match WhitespaceEOL /\s\+$/
 
 augroup vimrc-auto-mkdir  " {{{
   autocmd!
