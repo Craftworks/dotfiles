@@ -1,3 +1,14 @@
+set nocompatible
+filetype off
+
+" initialize Vundle
+set rtp+=~/.vim/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+filetype plugin indent on
+syntax on
+
 set modeline
 set tabstop=4
 set softtabstop=4
