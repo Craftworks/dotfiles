@@ -47,6 +47,8 @@ autocmd FileType perl nnoremap <buffer> <Up> :<C-u>!perl -I./lib -I./t/lib -I./e
 autocmd FileType perl nnoremap <buffer> <Down> :<C-u>!perl -I./lib -I./t/lib -I./extlib/lib/perl5 -I./extlib/lib/perl5/x86_64-linux-gnu-thread-multi %<Return>
 autocmd FileType perl nnoremap <buffer> <Left> :<C-u>!prove -v -I./lib -I./t/lib -I./extlib/lib/perl5 -I./extlib/lib/perl5/x86_64-linux-gnu-thread-multi %<Return>
 
+autocmd FileType javascript setlocal ts=2 sts=2 sw=2
+autocmd FileType javascript.titanium setlocal ts=2 sts=2 sw=2
 autocmd FileType css    setlocal ts=2 sts=2 sw=2
 autocmd FileType xslate setlocal ts=2 sts=2 sw=2
 autocmd FileType xslate inoremap <buffer> << </<C-p>>
@@ -63,3 +65,6 @@ augroup vimrc-auto-mkdir  " {{{
     endif
   endfunction  " }}}
 augroup END  " }}}
+
+" neocomplcache
+let g:neocomplcache_enable_at_startup = 1
