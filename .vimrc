@@ -5,6 +5,9 @@ filetype off
 set rtp+=~/.vim/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
+Bundle 'Align'
+Bundle 'pekepeke/titanium-vim'
+Bundle 'Shougo/neocomplcache'
 
 filetype plugin indent on
 syntax on
