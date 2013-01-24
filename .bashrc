@@ -13,15 +13,20 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+# check homebrew
+which -s brew || echo -e "[WARN] brew is not installed\n[WARN]   run 'ruby <(curl -fsSk https://raw.github.com/mxcl/homebrew/go)'"
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-elif which -s brew; then
-    if [ -f `brew --prefix`/etc/bash_completion ]; then
-        . `brew --prefix`/etc/bash_completion
-    fi
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
+
+if [ -f $(brew --prefix)/git ]; then
+    . $(brew --prefix git)/etc/bash_completion.d/git-completion.bash
+else
+    . $HOME/.git-completion.bash
 fi
 
 # You may want to put all your additions into a separate file like
@@ -31,17 +36,12 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-fi
-
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ]; then
     PATH="$HOME/bin:$PATH"
 fi
 
-if [ "$TERM" = "xterm" ]; then
+if [ "$TERM" = "xterm-256color" ]; then
     echo -ne "\033]0;$(whoami)@$(hostname)\007"
 fi
 
