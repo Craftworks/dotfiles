@@ -10,24 +10,14 @@ shopt -s histappend
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+if [ $(uname) == "Linux" ]; then
+    . ~/.bashrc-linux
+elif [ $(uname) == "Darwin" ]; then
+    . ~/.bashrc-darwin
+fi
+
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-# check homebrew
-which -s brew || echo -e "[WARN] brew is not installed\n[WARN]   run 'ruby <(curl -fsSk https://raw.github.com/mxcl/homebrew/go)'"
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-fi
-
-if [ -f $(brew --prefix)/git ]; then
-    . $(brew --prefix git)/etc/bash_completion.d/git-completion.bash
-else
-    . $HOME/.git-completion.bash
-fi
 
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.

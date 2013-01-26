@@ -1,4 +1,9 @@
-alias ls='ls -G'
+if [ $(uname) == "Linux" ]; then
+    . ~/.bash_aliases-linux
+elif [ $(uname) == "Darwin" ]; then
+    . ~/.bash_aliases-darwin
+fi
+
 alias l='ls -CF'
 alias ll='ls -alF'
 alias la='ls -A'
