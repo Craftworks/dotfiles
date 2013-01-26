@@ -21,3 +21,5 @@
     ls = log --stat
     lp = log -p
     la = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%cn] %Cgreen%d%Creset %s\" --all --date=short
+[user]
+    name = Craftworks
