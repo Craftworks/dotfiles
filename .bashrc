@@ -31,6 +31,10 @@ if [ -d "$HOME/bin" ]; then
     PATH="$HOME/bin:$PATH"
 fi
 
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
+
 if [ "$TERM" = "xterm-256color" ]; then
     echo -ne "\033]0;$(whoami)@$(hostname)\007"
 fi
