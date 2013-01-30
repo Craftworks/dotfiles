@@ -8,6 +8,7 @@ Bundle 'gmarik/vundle'
 Bundle 'Align'
 Bundle 'Shougo/neocomplcache'
 Bundle 'pekepeke/titanium-vim'
+Bundle 'mojo.vim'
 Bundle 'nginx.vim'
 
 filetype plugin indent on
