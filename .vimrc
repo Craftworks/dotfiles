@@ -13,6 +13,9 @@ Bundle 'motemen/xslate-vim'
 Bundle 'mojo.vim'
 Bundle 'nginx.vim'
 
+" color scheme
+Bundle 'molokai'
+
 filetype plugin indent on
 syntax on
 
