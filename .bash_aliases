@@ -13,3 +13,4 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias screen='LANG=en_US.UTF-8 screen'
 alias rsync='rsync -avz -e ssh'
+alias pmver='perl -e '"'"'for (@ARGV) { s{[-/]}{::}go; eval "use $_"; printf "$_ => %s\n", ${"$_\::VERSION"} || "not installed"; }'"'"
