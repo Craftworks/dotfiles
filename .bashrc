@@ -3,6 +3,8 @@ HISTSIZE=9999
 HISTFILESIZE=9999
 HISTCONTROL=ignoredups:ignorespace
 
+PS1='\[\033[0m\]\u@\h\[\033[00m\]:\[\033[1;30m\]\W\[\033[00m\]\[\033[33m\]$(__git_ps1)\[\033[00m\]\$ '
+
 # append to the history file, don't overwrite it
 shopt -s histappend
 
@@ -38,5 +40,3 @@ fi
 if [ "$TERM" = "xterm-256color" ]; then
     echo -ne "\033]0;$(whoami)@$(hostname)\007"
 fi
-
-PS1='\[\033[0m\]\u@\h\[\033[00m\]:\[\033[1;30m\]\W\[\033[00m\]\[\033[33m\]$(__git_ps1)\[\033[00m\]\$ '
