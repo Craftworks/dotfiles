@@ -7,11 +7,7 @@ uninstall: uninstall-bash uninstall-vim uninstall-screen uninstall-git uninstall
 
 install-bash:
 	$(shell $(INSTALL) .bashrc)
-	$(shell $(INSTALL) .bashrc-linux)
-	$(shell $(INSTALL) .bashrc-darwin)
 	$(shell $(INSTALL) .bash_aliases)
-	$(shell $(INSTALL) .bash_aliases-linux)
-	$(shell $(INSTALL) .bash_aliases-darwin)
 	$(shell $(INSTALL) .bash_profile)
 uninstall-bash:
 	$(shell $(UNINSTALL) .bashrc)
